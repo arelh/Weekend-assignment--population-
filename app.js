@@ -105,6 +105,7 @@ const myChart = new Chart(ctx, {
 
 AfricaBtn.addEventListener("click", () => {
   const buttonContainer1 = document.getElementById("buttonContainer");
+  buttonContainer1.replaceChildren("");
   africaArr.forEach((element) => {
     const btn = document.createElement("button");
     btn.innerText = element.city;
@@ -114,9 +115,11 @@ AfricaBtn.addEventListener("click", () => {
     });
     buttonContainer1.appendChild(btn);
   });
+
   myChart.data.labels = africaArr.map((element) => {
     return element.city;
   });
+
   myChart.data.datasets[0].data = africaArr.map((element) => {
     return element.pop;
   });
@@ -124,6 +127,7 @@ AfricaBtn.addEventListener("click", () => {
 });
 AmericasBtn.addEventListener("click", () => {
   const buttonContainer3 = document.getElementById("buttonContainer");
+  buttonContainer3.replaceChildren("");
   AmericasArr.forEach((element) => {
     const btn = document.createElement("button");
     btn.innerText = element.city;
@@ -144,6 +148,7 @@ AmericasBtn.addEventListener("click", () => {
 });
 AsiaBtn.addEventListener("click", () => {
   const buttonContainer3 = document.getElementById("buttonContainer");
+  buttonContainer3.replaceChildren("");
   AsiaArr.forEach((element) => {
     const btn = document.createElement("button");
     btn.innerText = element.city;
@@ -164,6 +169,7 @@ AsiaBtn.addEventListener("click", () => {
 });
 EuropeBtn.addEventListener("click", () => {
   const buttonContainer4 = document.getElementById("buttonContainer");
+  buttonContainer4.replaceChildren("");
   EuropeArr.forEach((element) => {
     const btn = document.createElement("button");
     btn.innerText = element.city;
@@ -184,6 +190,7 @@ EuropeBtn.addEventListener("click", () => {
 });
 OceaniaBtn.addEventListener("click", () => {
   const buttonContainer5 = document.getElementById("buttonContainer");
+  buttonContainer5.replaceChildren("");
   OceaniaArr.forEach((element) => {
     const btn = document.createElement("button");
     btn.innerText = element.city;
