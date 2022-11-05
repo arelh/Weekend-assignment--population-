@@ -71,10 +71,13 @@ async function getContinents() {
     OceaniaArr.push({ city, pop });
   }
   console.log("OceaniaArr", OceaniaArr);
+
+  let countriesAfrica = africaArr.map((element) => element.city);
+  console.log(countriesAfrica);
 }
 getContinents();
 
-
+function getCityPop(city) {}
 
 const ctx = document.getElementById("myChart");
 const myChart = new Chart(ctx, {
@@ -100,8 +103,17 @@ const myChart = new Chart(ctx, {
   },
 });
 
-
 AfricaBtn.addEventListener("click", () => {
+  const buttonContainer1 = document.getElementById("buttonContainer");
+  africaArr.forEach((element) => {
+    const btn = document.createElement("button");
+    btn.innerText = element.city;
+    btn.addEventListener("click", (e) => {
+      console.log(element.city);
+      fetchCity(element.city);
+    });
+    buttonContainer1.appendChild(btn);
+  });
   myChart.data.labels = africaArr.map((element) => {
     return element.city;
   });
@@ -111,6 +123,17 @@ AfricaBtn.addEventListener("click", () => {
   myChart.update();
 });
 AmericasBtn.addEventListener("click", () => {
+  const buttonContainer3 = document.getElementById("buttonContainer");
+  AmericasArr.forEach((element) => {
+    const btn = document.createElement("button");
+    btn.innerText = element.city;
+    btn.addEventListener("click", (e) => {
+      console.log(element.city);
+      fetchCity(element.city);
+    });
+    buttonContainer3.appendChild(btn);
+  });
+
   myChart.data.labels = AmericasArr.map((element) => {
     return element.city;
   });
@@ -120,6 +143,17 @@ AmericasBtn.addEventListener("click", () => {
   myChart.update();
 });
 AsiaBtn.addEventListener("click", () => {
+  const buttonContainer3 = document.getElementById("buttonContainer");
+  AsiaArr.forEach((element) => {
+    const btn = document.createElement("button");
+    btn.innerText = element.city;
+    btn.addEventListener("click", (e) => {
+      console.log(element.city);
+      fetchCity(element.city);
+    });
+    buttonContainer3.appendChild(btn);
+  });
+
   myChart.data.labels = AsiaArr.map((element) => {
     return element.city;
   });
@@ -129,6 +163,17 @@ AsiaBtn.addEventListener("click", () => {
   myChart.update();
 });
 EuropeBtn.addEventListener("click", () => {
+  const buttonContainer4 = document.getElementById("buttonContainer");
+  EuropeArr.forEach((element) => {
+    const btn = document.createElement("button");
+    btn.innerText = element.city;
+    btn.addEventListener("click", (e) => {
+      console.log(element.city);
+      fetchCity(element.city);
+    });
+    buttonContainer4.appendChild(btn);
+  });
+
   myChart.data.labels = EuropeArr.map((element) => {
     return element.city;
   });
@@ -138,6 +183,17 @@ EuropeBtn.addEventListener("click", () => {
   myChart.update();
 });
 OceaniaBtn.addEventListener("click", () => {
+  const buttonContainer5 = document.getElementById("buttonContainer");
+  OceaniaArr.forEach((element) => {
+    const btn = document.createElement("button");
+    btn.innerText = element.city;
+    btn.addEventListener("click", (e) => {
+      console.log(element.city);
+      fetchCity(element.city);
+    });
+    buttonContainer5.appendChild(btn);
+  });
+
   myChart.data.labels = OceaniaArr.map((element) => {
     return element.city;
   });
@@ -146,8 +202,6 @@ OceaniaBtn.addEventListener("click", () => {
   });
   myChart.update();
 });
-
-
 
 const fetchCity = async (country) => {
   const res = await fetch(
