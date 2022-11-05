@@ -14,7 +14,7 @@
  .title{
     margin: 10px;
  }
- .citeisBtns{
+ .buttonContainer{
     padding: 5px;
     margin: 5px;
     background-color: firebrick;
@@ -24,4 +24,7 @@
     border-radius: 7px;
     width: fit-content;
     height: fit-content;
+ }
+ #myChart{
+    width: 800px;
  }
